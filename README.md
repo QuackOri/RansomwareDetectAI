@@ -17,7 +17,7 @@ Ransomware의 False Negative의 피해는 막중합니다.<br>
 <br><br>
 
 # 사용법
-python &nbsp; this_file_is.py &nbsp; {directory_path} <br>
+> python &nbsp; this_file_is.py &nbsp; {directory_path} <br>
 <br>
 검증하고 싶은 랜섬웨어의 디렉토리 경로를 넣어줍니다.
 
