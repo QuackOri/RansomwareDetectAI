@@ -13,7 +13,7 @@ def is_ransom_by_api(api_model_path, data_path):
 
     # data 전처리
     pre_data_by_api = [rp.pre_api(data_path)]
-    print(len(pre_data_by_api))
+    
     api_df = list_to_df(pre_data_by_api, rp.api_columns)
     return api_model.predict(api_df)
 

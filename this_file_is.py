@@ -58,7 +58,7 @@ for file in os.listdir(directory_path):
 
     if api_result[0] == 1 or sn_result[0] == 1:
         print("Stop! It's Ransom")
-    elif b_api_result[0] == 1 or b_etrp_result[0] == 1 or b_ep_result[0] == 1:
+    elif (b_api_result[0] + b_etrp_result[0] == 1 + b_ep_result[0] == 1) > 1 :
         print("Warning! It's Malware")
     else:
         print("It's okay.. maybe")
