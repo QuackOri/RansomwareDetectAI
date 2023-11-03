@@ -15,12 +15,12 @@ directory_path = sys.argv[1]
 
 i = 0
 for file in os.listdir(directory_path):
-    file_path = directory_path+file
+    file_path = os.path.join(directory_path, file)
 
     # RDS
     api_result = RDS.is_ransom_by_api(cwd+'/models/r_api_model.pickle', file_path)
     sn_result = RDS.is_ransom_by_sectionname(cwd+'/models/r_new_sectionname_model.pickle', file_path)
-    pe_result = RDS.is_ransom_by_pe(cwd+'/models/r_api_model.pickle', file_path)
+    pe_result = RDS.is_ransom_by_pe(cwd+'/models/r_pe_model.pickle', file_path)
     # BDS
     b_api_result = BDS.is_malware_by_api(cwd+'/models/b_api_model.pickle', file_path)
     b_etrp_result = BDS.is_malware_by_entropy(cwd+'/models/b_entropy_model.pickle', file_path)
