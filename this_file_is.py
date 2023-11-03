@@ -26,6 +26,10 @@ for file in os.listdir(directory_path):
     b_etrp_result = BDS.is_malware_by_entropy(cwd+'/models/b_entropy_model.pickle', file_path)
     b_ep_result = BDS.is_malware_by_entrypoint(cwd+'/models/b_entrypoint_model.pickle', file_path)
 
+    # cls
+    clear = lambda : os.system('cls')
+    clear()
+  
     print("###", i, file, "###")
     print()
     if api_result[0] == 1:
