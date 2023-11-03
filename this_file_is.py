@@ -1,7 +1,10 @@
 import sys
 import os
-from code import RDS
-from code import BDS
+cwd = os.getcwd()
+sys.path.append(cwd+'\\codes')
+
+from codes import RDS
+from codes import BDS
 
 if len(sys.argv) != 2:
   print("!!Please enter the directory name")
@@ -9,7 +12,6 @@ if len(sys.argv) != 2:
   exit()
 
 directory_path = sys.argv[1]
-cwd = os.getcwd()
 
 i = 0
 for file in os.listdir(directory_path):
