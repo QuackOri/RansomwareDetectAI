@@ -70,44 +70,6 @@ def pre_entrypoint(path):
         exit()
     return ep_50
 
-# For PE Header
-def get_pe_header(path):
-    pe = pefile.PE(path)
-    pe_header = []
-    pe_header.append(pe.DOS_HEADER.e_lfanew)
-    pe_header.append(pe.FILE_HEADER.NumberOfSections)
-    pe_header.append(pe.FILE_HEADER.Characteristics)
-    pe_header.append(pe.OPTIONAL_HEADER.DllCharacteristics)
-    pe_header.append(pe.OPTIONAL_HEADER.CheckSum)
-    pe_header.append(pe.OPTIONAL_HEADER.SizeOfImage)
-    pe_header.append(pe.OPTIONAL_HEADER.Subsystem)
-    pe_header.append(pe.OPTIONAL_HEADER.ImageBase)
-    pe_header.append(pe.OPTIONAL_HEADER.AddressOfEntryPoint)
-    pe_header.append(pe.OPTIONAL_HEADER.SizeOfInitializedData)
-    pe_header.append(pe.OPTIONAL_HEADER.SizeOfUninitializedData)
-
-    # first section size
-    firstS = pe.sections[0]
-    sizeFirstD = firstS.SizeOfRawData
-    sizeFirstV = firstS.Misc
-    pe_header.append(sizeFirstD)
-    pe_header.append(sizeFirstV)
-
-    # .rsrc
-    sizeRsrcD = 0
-    sizeRsrcV = 0
-    for section in pe.sections:
-        if b'.rsrc' in section.Name:
-            sizeRsrcD = section.SizeOfRawData
-            sizeRsrcV = section.Misc
-            break
-    pe_header.append(sizeRsrcD)
-    pe_header.append(sizeRsrcV)
-
-    return pe_header
-            
-
-
 
 if __name__=="__main__":
     target_file = "C:\\Windows\\System32\\calc.exe"
@@ -116,6 +78,5 @@ if __name__=="__main__":
     etr_feature = pre_entrypoint(target_file)
 
     row = api_feature + etrp_feature + etr_feature
-    # row = get_pe_header(target_file)
     print(len(row))
     print(row)

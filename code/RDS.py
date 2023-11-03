@@ -1,3 +1,4 @@
+# RDS.py
 import pickle
 import pandas as pd
 import ransom_preprocessing as rp
@@ -26,3 +27,14 @@ def is_ransom_by_sectionname(sn_model_path, data_path):
 
     sn_df = list_to_df(pre_data_by_sn, rp.sn_columns)
     return sn_model.predict(sn_df)
+
+def is_ransom_by_pe(pe_model_path, data_path):
+    with open(pe_model_path, 'rb') as f:
+        pe_saved_dict = pickle.load(f)
+    pe_model = pe_saved_dict['model']
+
+    # data 전처리
+    pre_data_by_pe = [rp.pre_pe(data_path)]
+
+    pe_df = list_to_df(pre_data_by_pe, rp.pe_columns)
+    return pe_model.predict(pe_df)

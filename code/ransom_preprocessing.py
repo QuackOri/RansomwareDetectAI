@@ -2,6 +2,7 @@ import pefile
 
 api_columns = ['API/DLL_1', 'API/DLL_2', 'API/DLL_3', 'API/DLL_4', 'API/DLL_5', 'API/DLL_6', 'API/DLL_7', 'API/DLL_8', 'API/DLL_9', 'API/DLL_10', 'API/DLL_11', 'API/DLL_12', 'API/DLL_13', 'API/DLL_14', 'API/DLL_15', 'API/DLL_16', 'API/DLL_17', 'API/DLL_18', 'API/DLL_19', 'API/DLL_20', 'API/DLL_21', 'API/DLL_22', 'API/DLL_23', 'API/DLL_24', 'API/DLL_25', 'API/DLL_26', 'API/DLL_27', 'API/DLL_28', 'API/DLL_29']
 sn_columns = ['SectionName0', 'SectionName1', 'SectionName2', 'SectionName3', 'SectionName4', 'SectionName5', 'SectionName6', 'SectionName7', 'SectionName8', 'SectionName9', 'SectionName10', 'SectionName11', 'SectionName12', 'SectionName13', 'SectionName14', 'SectionName15', 'SectionName16', 'SectionName17', 'SectionName18', 'SectionName19', 'SectionName20', 'SectionName21', 'SectionName22', 'SectionName23', 'SectionName24', 'SectionName25', 'SectionName26', 'SectionName27', 'SectionName28', 'SectionName29', 'SectionName30', 'SectionName31', 'SectionName32', 'SectionName33', 'SectionName34', 'SectionName35', 'SectionName36', 'SectionName37', 'SectionName38', 'SectionName39', 'SectionName40', 'SectionName41', 'SectionName42', 'SectionName43', 'SectionName44', 'SectionName45', 'SectionName46', 'SectionName47', 'SectionName48', 'SectionName49', 'SectionName50', 'SectionName51', 'SectionName52', 'SectionName53', 'SectionName54', 'SectionName55', 'SectionName56', 'SectionName57', 'SectionName58', 'SectionName59', 'SectionName60', 'SectionName61', 'SectionName62', 'SectionName63', 'SectionName64', 'SectionName65', 'SectionName66', 'SectionName67', 'SectionName68', 'SectionName69', 'SectionName70', 'SectionName71', 'SectionName72', 'SectionName73', 'SectionName74', 'SectionName75', 'SectionName76', 'SectionName77', 'SectionName78', 'SectionName79', 'SectionName80', 'SectionName81', 'SectionName82', 'SectionName83', 'SectionName84', 'SectionName85', 'SectionName86', 'SectionName87', 'SectionName88', 'SectionName89', 'SectionName90', 'SectionName91', 'SectionName92', 'SectionName93', 'SectionName94', 'SectionName95', 'SectionName96', 'SectionName97', 'SectionName98', 'SectionName99', 'SectionName100', 'SectionName101', 'SectionName102', 'SectionName103', 'SectionName104', 'SectionName105', 'SectionName106', 'SectionName107', 'SectionName108', 'SectionName109', 'SectionName110', 'SectionName111', 'SectionName112', 'SectionName113', 'SectionName114', 'SectionName115', 'SectionName116', 'SectionName117', 'SectionName118', 'SectionName119', 'SectionName120', 'SectionName121', 'SectionName122', 'SectionName123', 'SectionName124', 'SectionName125', 'SectionName126', 'SectionName127', 'SectionName128', 'SectionName129', 'SectionName130', 'SectionName131', 'SectionName132', 'SectionName133', 'SectionName134', 'SectionName135', 'SectionName136', 'SectionName137', 'SectionName138', 'SectionName139', 'SectionName140', 'SectionName141', 'SectionName142', 'SectionName143', 'SectionName144', 'SectionName145', 'SectionName146', 'SectionName147', 'SectionName148', 'SectionName149', 'SectionName150', 'SectionName151', 'SectionName152', 'SectionName153', 'SectionName154', 'SectionName155', 'SectionName156', 'SectionName157', 'SectionName158', 'SectionName159', 'SectionName160', 'SectionName161', 'SectionName162', 'SectionName163', 'SectionName164', 'SectionName165', 'SectionName166', 'SectionName167', 'SectionName168', 'SectionName169', 'SectionName170', 'SectionName171', 'SectionName172', 'SectionName173', 'SectionName174', 'SectionName175', 'SectionName176', 'SectionName177', 'SectionName178', 'SectionName179', 'SectionName180', 'SectionName181', 'SectionName182', 'SectionName183', 'SectionName184', 'SectionName185', 'SectionName186', 'SectionName187', 'SectionName188', 'SectionName189', 'SectionName190', 'SectionName191', 'SectionName192', 'SectionName193', 'SectionName194', 'SectionName195', 'SectionName196', 'SectionName197', 'SectionName198', 'SectionName199', 'SectionName200', 'SectionName201', 'SectionName202', 'SectionName203', 'SectionName204', 'SectionName205', 'SectionName206', 'SectionName207', 'SectionName208', 'SectionName209', 'SectionName210', 'SectionName211', 'SectionName212', 'SectionName213', 'SectionName214', 'SectionName215', 'SectionName216', 'SectionName217', 'SectionName218', 'SectionName219', 'SectionName220', 'SectionName221', 'SectionName222', 'SectionName223', 'SectionName224', 'SectionName225', 'SectionName226', 'SectionName227', 'SectionName228', 'SectionName229', 'SectionName230']
+pe_columns = ["e_lfanew", "NumberOfSections", "Characteristics", "DllCharacteristics", "CheckSum", "SizeOfImage", "Subsystem", "ImageBase", "AddressOfEntryPoint", "SizeOfInitializedData", "SizeOfUninitializedData", "firstSectionRawSize", "firstSectionVirtualSize", "rsrcSectionRawSize", "rsrcSectionVirtualSize"]
 
 section_names = ['', 'rSEkROYX', 'jUtrpYsA', 'KwTbCaxM', '.rvtn', '.ajelhf', '.tls \x10', 'CODE', '.embm', '.retplne', 'waecTbTU', '.toour', '.reloc', '.itext', 'DvWhCIvf', '.edata', 'aMzuGtCo', '.idata', 'UPX2', '.nvFatBi', '.aspack', '.pr1', 'rbqkwszv', '30186', '.itext \x10', '.enigma1', '.eryi', '.pr0', 'PARTUrmq', '.f', '.fasm', 'QwJTpjYY', 'XkeFCeIk', '.l1', 'pVQaXXRZ', 'zixCLRPo', '.UPX0', 'seg2', 'hjsUDrdI', '.atu', 'zCOudfzz', '.wdata', '.didata', 'brlYMzrk', 'iqsNyMnI', 'UPX0', 'text', '191128', '.gl', '\x10Z \x1b@\x12\x19\x01', 'uByjmpOk', '.enigma2', 'rQgajwSl', '111149', '.pdata', 'cofrmms', '.hnmtr', 'OnAQWSnT', '.hoAiXT', '.zqi', '19199', 'dkdxbvi', '.xObf', 'uAsLxMSc', '.fen', '.text U', 'XBqaJfNA', 'seg1', '241105', 'IRevzthI', '.ksj', '23233', '.text no', 'SmAxvlLA', 'DZPWkQjd', 'stub', 'lzPiGjjl', 'ajHuyfDz', 'GlFCfAHi', 'gtmVsfxT', 'fTBAqfyw', 'data', '/4', '.xjs', 'PAGED', '.rsrc \x10', '11988', '.avtpq', 'gTqpRBSE', '7162', '16678', '.text', '.msvcjmc', 'bdbhKMcA', '.xdata', '_TEXT_CN', '5227', 'BSS', 'ZXpdpZCG', '.ygz', 'TEXT', '.aajaic', 'gZnBDeJg', '.rsrc', 'NET', '.fmbav', 'XPoQQDfw', 'DcGfkoSu', '.yxutw', 'UPX1', '15399', '.nv_fatb', 'oMRJGIsK', '.data', 'cWWlXjsE', 'petite', '.textbss', '24081', '2814', 'mufJjTLu', '&1em&1em', '.rsrc s', 'qNVHhmNz', '.uebh', '.d', '.petite', 'VntOSupj', 'g53zp4v8', 'tcOPuqRW', '.shr', '.imrsiv', '.', '.vmp1', '.l2', '.ap0x', '.gnu_deb', 'JSCnruWr', '.srdata', '.gfcd', '215178', '.data U', '.turt', '.vaet', '.reloc \x10', 'aCJMwlGU', '.00cfg', 'iiHYouMw', '.CRT', 'tvCfQlYx', '.flh', '.ieoo', '.xbyi', '.idata \x10', '.rodata', '.vmp0', 'yvsVDYin', '.adata', 'PGGiDbVj', 'sYndfJsm', 'rGTbDTJs', '.now', 'kwVuDSUh', 'gYyYNFDp', '.NewSec', '.wtf', 'cKHqNuzk', '.zxx', 'PnImEyie', '.ndata', '.tls', 'DATA', '.zbpf', 'gMssCbqf', 'BovETaNi', 'OLkGuECx', 'VHGShZYj', 'rGfFyqXK', '188120', 'CODE \x10', 'kMfgwsmE', '.rdata', '.code', 'INIT', '1', 'DMYJwSiy', '.pebizo', '.sdata', '.idata o', 'ZXwPlvTQ', 'YohejkEe', 'GFIDS', 'CPADinfo', '.bss', '.text \x10', '.imports', 'nPcvodWH', '.didat', '.kx', 'YkVgPvyv', 'ttSMtSxz', 'PAGE', '.p', '.cdata', 'ZTBOXsdz', 'bss \x10', 'cnwnFlwT', '.data \x10', 'LQVNEPly', '.zfe', '.fldo', 'wjfwhyr', '.MPRESS2', '.icode', '.a57y2', 'JCYholgx', '.sg', '.vbp', '.code \x12', 'kUHiTJjx', '16386', '.gfids', '.guids', '23815', '.MPRESS1', 'fPisKdRT', '_RDATA', '.lfd', '.modplug', '.ick', '.y', '16165']
 desired_features = {
@@ -290,7 +291,44 @@ def pre_api(path):
         label_values[index-1] = label_value  # 카운터를 저장
     return label_values
 
+def pre_pe(path):
+    pe = pefile.PE(path)
+    pe_header = []
+    pe_header.append(pe.DOS_HEADER.e_lfanew)
+    pe_header.append(pe.FILE_HEADER.NumberOfSections)
+    pe_header.append(pe.FILE_HEADER.Characteristics)
+    pe_header.append(pe.OPTIONAL_HEADER.DllCharacteristics)
+    pe_header.append(pe.OPTIONAL_HEADER.CheckSum)
+    pe_header.append(pe.OPTIONAL_HEADER.SizeOfImage)
+    pe_header.append(pe.OPTIONAL_HEADER.Subsystem)
+    pe_header.append(pe.OPTIONAL_HEADER.ImageBase)
+    pe_header.append(pe.OPTIONAL_HEADER.AddressOfEntryPoint)
+    pe_header.append(pe.OPTIONAL_HEADER.SizeOfInitializedData)
+    pe_header.append(pe.OPTIONAL_HEADER.SizeOfUninitializedData)
+
+    # first section size
+    firstS = pe.sections[0]
+    sizeFirstD = firstS.SizeOfRawData
+    sizeFirstV = firstS.Misc
+    pe_header.append(sizeFirstD)
+    pe_header.append(sizeFirstV)
+
+    # .rsrc
+    sizeRsrcD = 0
+    sizeRsrcV = 0
+    for section in pe.sections:
+        if b'.rsrc' in section.Name:
+            sizeRsrcD = section.SizeOfRawData
+            sizeRsrcV = section.Misc
+            break
+    pe_header.append(sizeRsrcD)
+    pe_header.append(sizeRsrcV)
+
+    return pe_header
+
+
 if __name__=="__main__":
-    target_path = 'C:\\Users\\manseo\\Desktop\\finalAI\\testdata\\131.exe'
-    #print(pre_sectionname(target_path))
-    print(pre_api(target_path))
+    target_path = "C:\\Windows\\System32\\calc.exe"
+    # print(pre_sectionname(target_path))
+    # print(pre_api(target_path))
+    print(pre_pe(target_path))
