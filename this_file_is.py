@@ -35,15 +35,15 @@ for file in os.listdir(directory_path):
     if api_result[0] == 1:
         print('\033[31m' + "RDS-API: " + "Ransom" + '\033[0m')
     else:
-        print('\033[32m' + "RDS-API: " + "It's okay" + '\033[0m')
+        print('\033[32m' + "RDS-API: " + "No Ransom" + '\033[0m')
     if sn_result[0] == 1:
         print('\033[31m' + "RDS-SN: " + "Ransom" + '\033[0m')
     else:
-        print('\033[32m' + "RDS-SN: " + "It's okay" + '\033[0m')
+        print('\033[32m' + "RDS-SN: " + "No Ransom" + '\033[0m')
     if pe_result[0] == 1:
         print('\033[31m' + "RDS-PE: " + "Ransom" + '\033[0m')
     else:
-        print('\033[32m' + "RDS-PE: " + "It's okay" + '\033[0m')
+        print('\033[32m' + "RDS-PE: " + "No Ransom" + '\033[0m')
     print()
     if b_api_result[0] == 1:
         print('\033[31m' + "BDS-API: " + "Malware" + '\033[0m')
@@ -60,12 +60,14 @@ for file in os.listdir(directory_path):
     
     print()
 
-    if api_result[0] == 1 or sn_result[0] == 1:
-        print("Stop! It's Ransom")
+    if api_result[0] + sn_result[0] == 2 or pe_result[0] == 1:
+        print("Stop! It's "+'\033[31m'+"Dangerous"+ '\033[0m')
+    elif pe_result[0] == 0 and api_result[0] + sn_result[0] == 1 :
+        print('\033[33m'+"Warning!Warning!!Warning!!!"+'\033[0m')
     elif (b_api_result[0] + b_etrp_result[0] == 1 + b_ep_result[0] == 1) > 1 :
-        print("Warning! It's Malware")
+        print('\033[33m'+"Warning!Warning!!Warning!!!"+'\033[0m')
     else:
-        print("It's okay.. maybe")
+        print("It's "+'\033[32m' + "okay.."+'\033[0m'+" maybe")
 
     input()
     i+=1
