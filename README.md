@@ -1,6 +1,6 @@
 # AI보안 기술개발 인력양성 : 악성코드 과정
 * **해당 프로젝트는 KISIA 악성코드 탐지 AI모델 개발 교육과정에서 진행된 프로젝트입니다.**
-* **팀원 : QuackOri, P4P3R-HAK, tkdals69**
+* **팀원 : [QuackOri](https://github.com/QuackOri), [P4P3R-HAK](https://github.com/P4P3R-HAK), [tkdals69](https://github.com/tkdals69)**
 
 # RansomwareDetectAI
 **XGBoost를 사용하여 ransomware를 탐지하는 모델입니다.<br>
